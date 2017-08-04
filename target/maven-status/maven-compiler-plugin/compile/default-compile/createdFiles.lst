@@ -1,0 +1,8 @@
+com\manulife\claim\constant\ClaimConstants.class
+com\manulife\claim\service\ClaimService.class
+com\manulife\claim\repository\ClaimRepository.class
+com\manulife\claim\model\Claim.class
+com\manulife\claim\service\ClaimServiceImpl.class
+com\manulife\claim\util\CustomErrorType.class
+com\manulife\claim\ClaimSpringbootApplication.class
+com\manulife\claim\controller\ClaimController.class
