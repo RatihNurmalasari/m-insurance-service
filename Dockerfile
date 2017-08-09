@@ -1,7 +1,7 @@
 FROM maven:3.5-jdk-8-alpine
 
 RUN mkdir -p /springboot-service
-ADD ./scr /springboot-service/scr
+ADD ./src /springboot-service/src
 ADD ./target /springboot-service/target
 ADD ./pom.xml /springboot-service/pom.xml
 
