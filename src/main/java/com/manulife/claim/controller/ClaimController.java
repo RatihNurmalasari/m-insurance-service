@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.manulife.claim.model.Claim;
 import com.manulife.claim.service.ClaimService;
 import com.manulife.claim.util.CustomErrorType;
 
+@CrossOrigin("http://manulife-claim-dockermgmt.centralus.cloudapp.azure.com")
 @RestController
 public class ClaimController {
 	
