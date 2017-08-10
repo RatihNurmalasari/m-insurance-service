@@ -17,7 +17,7 @@ import com.manulife.claim.model.Claim;
 import com.manulife.claim.service.ClaimService;
 import com.manulife.claim.util.CustomErrorType;
 
-@CrossOrigin("http://manulife-claim-dockermgmt.centralus.cloudapp.azure.com")
+@CrossOrigin("http://manulife-claim-dockermgmt.centralus.cloudapp.azure.com:5050")
 @RestController
 public class ClaimController {
 	
