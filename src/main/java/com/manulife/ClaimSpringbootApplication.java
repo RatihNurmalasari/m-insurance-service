@@ -29,10 +29,10 @@ public class ClaimSpringbootApplication {
 		return (args) -> {
 
 			// Dummy data for credential
-			credentialRepository.save(new Credential("alexa.sawyer@mail.com", "ABC123abc"));
+			credentialRepository.save(new Credential("alexa.sawyer@gmail.com", "ABC123abc"));
 			
 			// Dummy data for profile
-			profileRepository.save(new Profile("alexa.sawyer@mail.com", "Alexa", "Sawyer", "08/01/1974", "302-2951 Ipsum. Road", "Lowell", "Massachusetts", "US", "49235", "(128) 858-2131"));
+			profileRepository.save(new Profile("alexa.sawyer@gmail.com", "Alexa", "Sawyer", "08/01/1974", "302-2951 Ipsum. Road", "Lowell", "Massachusetts", "US", "49235", "(128) 858-2131"));
 			
 			// Dummy data for claim details
 			claimRepository.save(new Claim("Alexa Mcintyre", "Alexa", "","Mcintyre","08-28-77", "P.O. Box 260, 8095 Gravida. Avenue","","San Antonio","40870","Texas","United States","(877) 729-4633","sollicitudin@elitpede.com",1608021583 , "In Progress",""));
