@@ -1,12 +1,7 @@
 package com.manulife.claim.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import org.springframework.http.ResponseEntity;
-
-import com.manulife.claim.util.CustomErrorType;
 
 @Entity
 public class Claim {

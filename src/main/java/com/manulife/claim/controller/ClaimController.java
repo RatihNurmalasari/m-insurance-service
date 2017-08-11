@@ -21,7 +21,6 @@ import com.manulife.claim.util.CustomErrorType;
 @RestController
 public class ClaimController {
 	
-	private static final Claim claim = null;
 	@Autowired
 	private ClaimService claimService;
 	
@@ -50,7 +49,7 @@ public class ClaimController {
     	return new ResponseEntity<List<Claim>>(claims, HttpStatus.OK);
 	}
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/manulife/claim/{claimid}", method = RequestMethod.GET)
     public ResponseEntity<?> getClaim(@PathVariable("claimid") long claimid,@RequestHeader(value = "tokenID", required = true) String tokenID,@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "sessionID", required = true)String sessionID ) {
     	

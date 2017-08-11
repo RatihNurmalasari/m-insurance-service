@@ -14,7 +14,6 @@ public class ClaimServiceImpl implements ClaimService {
 	@Autowired
 	ClaimRepository claimRepository; 
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public Claim getClaimById(long claimid) {
 		return claimRepository.findOne(claimid);
