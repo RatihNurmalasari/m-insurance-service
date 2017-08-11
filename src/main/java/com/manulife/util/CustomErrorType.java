@@ -1,4 +1,4 @@
-package com.manulife.claim.util;
+package com.manulife.util;
 
 public class CustomErrorType {
 

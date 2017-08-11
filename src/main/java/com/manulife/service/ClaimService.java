@@ -1,8 +1,8 @@
-package com.manulife.claim.service;
+package com.manulife.service;
 
 import java.util.List;
 
-import com.manulife.claim.model.Claim;
+import com.manulife.model.Claim;
 
 public interface ClaimService {
 	Claim getClaimById(long claimid);

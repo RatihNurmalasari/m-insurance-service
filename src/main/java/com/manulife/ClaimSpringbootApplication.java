@@ -1,4 +1,4 @@
-package com.manulife.claim;
+package com.manulife;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,12 +7,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.manulife.claim.model.Claim;
-import com.manulife.claim.model.Credential;
-import com.manulife.claim.model.Profile;
-import com.manulife.claim.repository.ClaimRepository;
-import com.manulife.claim.repository.CredentialRepository;
-import com.manulife.claim.repository.ProfileRepository;
+import com.manulife.model.Claim;
+import com.manulife.model.Credential;
+import com.manulife.model.Profile;
+import com.manulife.repository.ClaimRepository;
+import com.manulife.repository.CredentialRepository;
+import com.manulife.repository.ProfileRepository;
 
 @SpringBootApplication
 public class ClaimSpringbootApplication {

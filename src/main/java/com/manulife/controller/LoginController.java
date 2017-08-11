@@ -1,4 +1,4 @@
-package com.manulife.claim.controller;
+package com.manulife.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.manulife.claim.model.Credential;
-import com.manulife.claim.model.Profile;
-import com.manulife.claim.service.LoginService;
-import com.manulife.claim.service.ProfileService;
-import com.manulife.claim.util.CustomErrorType;
+import com.manulife.model.Credential;
+import com.manulife.model.Profile;
+import com.manulife.service.LoginService;
+import com.manulife.service.ProfileService;
+import com.manulife.util.CustomErrorType;
 
 @CrossOrigin
 @RestController

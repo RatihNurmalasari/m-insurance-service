@@ -1,4 +1,4 @@
-package com.manulife.claim.model;
+package com.manulife.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

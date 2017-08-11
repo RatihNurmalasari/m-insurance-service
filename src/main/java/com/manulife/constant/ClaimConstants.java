@@ -1,4 +1,4 @@
-package com.manulife.claim.constant;
+package com.manulife.constant;
 public final class ClaimConstants {
 
     private ClaimConstants() {

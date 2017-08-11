@@ -1,12 +1,12 @@
-package com.manulife.claim.service;
+package com.manulife.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.manulife.claim.model.Claim;
-import com.manulife.claim.repository.ClaimRepository;
+import com.manulife.model.Claim;
+import com.manulife.repository.ClaimRepository;
 
 @Service("claimService")
 public class ClaimServiceImpl implements ClaimService {

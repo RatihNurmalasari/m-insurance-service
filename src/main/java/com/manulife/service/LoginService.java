@@ -1,10 +1,10 @@
-package com.manulife.claim.service;
+package com.manulife.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.manulife.claim.model.Credential;
-import com.manulife.claim.repository.CredentialRepository;
+import com.manulife.model.Credential;
+import com.manulife.repository.CredentialRepository;
 
 @Service("loginService")
 public class LoginService{

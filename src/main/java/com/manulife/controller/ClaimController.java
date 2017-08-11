@@ -1,4 +1,4 @@
-package com.manulife.claim.controller;
+package com.manulife.controller;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.manulife.claim.constant.ClaimConstants;
-import com.manulife.claim.model.Claim;
-import com.manulife.claim.service.ClaimService;
-import com.manulife.claim.util.CustomErrorType;
+import com.manulife.constant.ClaimConstants;
+import com.manulife.model.Claim;
+import com.manulife.service.ClaimService;
+import com.manulife.util.CustomErrorType;
 
 @CrossOrigin("http://manulife-claim-dockermgmt.centralus.cloudapp.azure.com:5050")
 @RestController
