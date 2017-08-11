@@ -18,6 +18,7 @@ public class Profile {
 	private String country; 
 	private String zipcode;
 	private String phoneNumber;
+	private String sessionId;
 
 	public Profile() {
 		
@@ -33,6 +34,7 @@ public class Profile {
 		this.zipcode = zipcode;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
+		this.sessionId = "";
 	}
 	
 	public String getFirstName() {
@@ -113,6 +115,12 @@ public class Profile {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getSessionId() {
+		return sessionId;
+	}
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
 		
 }

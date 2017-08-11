@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.manulife.constant.ClaimConstants;
 import com.manulife.model.Credential;
 import com.manulife.model.Profile;
 import com.manulife.service.LoginService;
@@ -33,6 +34,7 @@ public class LoginController {
 	    Credential credential = loginService.getCredentialByEmail(loginReq.getEmail());
 	    if(credential != null && loginReq.getPassword().equals(credential.getPassword())) {
 	    		Profile profile = profileService.getProfileByEmail(credential.getEmail());
+	    		profile.setSessionId(ClaimConstants.SESSION_ID);
     			return new ResponseEntity<>(profile, HttpStatus.OK);
 	    	}
 	    	return new ResponseEntity(new CustomErrorType("M1001", "Please check your email and password"), HttpStatus.NOT_FOUND);	
