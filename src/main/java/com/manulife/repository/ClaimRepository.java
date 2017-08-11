@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.manulife.model.Claim;
 
 @Repository("claimRepository")
-public interface ClaimRepository extends JpaRepository<Claim, Long> {
+public interface ClaimRepository extends JpaRepository<Claim, String> {
 }

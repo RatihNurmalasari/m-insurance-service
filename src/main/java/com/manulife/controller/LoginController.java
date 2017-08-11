@@ -15,7 +15,7 @@ import com.manulife.service.LoginService;
 import com.manulife.service.ProfileService;
 import com.manulife.util.CustomErrorType;
 
-@CrossOrigin
+@CrossOrigin("http://manulife-claim-dockermgmt.centralus.cloudapp.azure.com:5050")
 @RestController
 public class LoginController {
 	@Autowired
@@ -27,16 +27,15 @@ public class LoginController {
 	@RequestMapping(value = "/account/login", method = RequestMethod.POST)
     public ResponseEntity<?> login(@RequestBody Credential loginReq) {
     	    	if(loginReq.getEmail().isEmpty() || loginReq.getPassword().isEmpty()) {
-	    		return new ResponseEntity(new CustomErrorType("Please check your email and password"), HttpStatus.NOT_FOUND);
+	    		return new ResponseEntity(new CustomErrorType("M1001", "Please check your email and password"), HttpStatus.NOT_FOUND);
 	    	}
-
+    	    	
 	    Credential credential = loginService.getCredentialByEmail(loginReq.getEmail());
-	    	if(credential != null && loginReq.getPassword().equals(credential.getPassword())) {
+	    if(credential != null && loginReq.getPassword().equals(credential.getPassword())) {
 	    		Profile profile = profileService.getProfileByEmail(credential.getEmail());
     			return new ResponseEntity<>(profile, HttpStatus.OK);
 	    	}
-	    	
-	    	return new ResponseEntity(new CustomErrorType("Please check your email and password"), HttpStatus.NOT_FOUND);	
+	    	return new ResponseEntity(new CustomErrorType("M1001", "Please check your email and password"), HttpStatus.NOT_FOUND);	
 	}
 }
 

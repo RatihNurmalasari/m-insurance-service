@@ -51,7 +51,7 @@ public class ClaimController {
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/manulife/claim/{claimid}", method = RequestMethod.GET)
-    public ResponseEntity<?> getClaim(@PathVariable("claimid") long claimid,@RequestHeader(value = "tokenID", required = true) String tokenID,@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "sessionID", required = true)String sessionID ) {
+    public ResponseEntity<?> getClaim(@PathVariable("claimid") String claimid,@RequestHeader(value = "tokenID", required = true) String tokenID,@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "sessionID", required = true)String sessionID ) {
     	
     	if (sessionID.isEmpty()) {
 			return new ResponseEntity(new CustomErrorType("Invalid Session ID # " + sessionID 
@@ -83,7 +83,7 @@ public class ClaimController {
 					+ " is wrong"), HttpStatus.NOT_FOUND);
 		}
     	
-    	if (Long.toString(claimid).isEmpty()) {
+    	if (claimid.isEmpty()) {
     		return new ResponseEntity(new CustomErrorType("claimid ID# " + claimid 
     				+ " not found"), HttpStatus.NOT_FOUND);
         }

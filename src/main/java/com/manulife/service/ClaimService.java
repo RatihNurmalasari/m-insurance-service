@@ -5,6 +5,6 @@ import java.util.List;
 import com.manulife.model.Claim;
 
 public interface ClaimService {
-	Claim getClaimById(long claimid);
+	Claim getClaimById(String claimid);
 	List<Claim> getAllClaim();
 }

@@ -15,7 +15,7 @@ public class ClaimServiceImpl implements ClaimService {
 	ClaimRepository claimRepository; 
 
 	@Override
-	public Claim getClaimById(long claimid) {
+	public Claim getClaimById(String claimid) {
 		return claimRepository.findOne(claimid);
 	}
 

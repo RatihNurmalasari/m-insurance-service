@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.manulife.model.Claim;
 import com.manulife.model.Credential;
+import com.manulife.model.Hospital;
 import com.manulife.model.Profile;
 import com.manulife.repository.ClaimRepository;
 import com.manulife.repository.CredentialRepository;
@@ -35,11 +36,8 @@ public class ClaimSpringbootApplication {
 			profileRepository.save(new Profile("alexa.sawyer@gmail.com", "Alexa", "Sawyer", "08/01/1974", "302-2951 Ipsum. Road", "Lowell", "Massachusetts", "US", "49235", "(128) 858-2131"));
 			
 			// Dummy data for claim details
-			claimRepository.save(new Claim("Alexa Mcintyre", "Alexa", "","Mcintyre","08-28-77", "P.O. Box 260, 8095 Gravida. Avenue","","San Antonio","40870","Texas","United States","(877) 729-4633","sollicitudin@elitpede.com",1608021583 , "In Progress",""));
-			claimRepository.save(new Claim("Kaseem Patel", "Kaseem", "","Patel","01-04-74", "302-2951 Ipsum. Road","","Lowell","49533","Massachusetts","United States","(716) 182-6793","sollicitudin@semmollis.co.uk",1608021584 , "Completed",""));
-			claimRepository.save(new Claim("Amery Sawyer", "Amery", "","Sawyer","11-10-86", "8832 Faucibus Street","","Butte","65877","Montana","United States","(890) 628-3495","scelerisque.neque.sed@Proinegetodio.co.uk",1608021585 , "Rejected"," "));
-			claimRepository.save(new Claim("Travis Russo", "Travis", "","Russo","05-14-84", "282-1169 Tincidunt, Av.","","Portland","58127","Oregon","United States","(128) 858-2131","spede.Praesent@feugiatmetussit.edu",1608021586 , "Completed",""));
-			claimRepository.save(new Claim("Timothy Russell", "Timothy", "","Russell","02-23-87", "Ap #751-271 Elit. Street","","Burlington","29059","Vermont","United States","(596) 620-7942","pede.Cum@orci.org",1608021587 , "In Progress",""));
+			claimRepository.save(new Claim("16080215833", "8282474042", "alexa.sawyer@gmail.com", "Alexa Sawyer", "Processed", "02/24/2017", "02/24/2017", "$210", "$210", new Hospital("Union Hospital", "659 Boulevard St", "Dover", "Ohio", "44622", "United States")));
+			claimRepository.save(new Claim("16170321000", "8282727332", "alexa.sawyer@gmail.com", "Alexa Sawyer", "In-Progress", "03/01/2017", "03/15/2017", "$670", "$500", new Hospital("Northwestern Memorial Hospital", "251 E Huron St", "Chicago", "Illinois", "60611", "United States")));
 			
 			logger.info("The sample data has been generated");
 
