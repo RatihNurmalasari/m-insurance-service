@@ -24,7 +24,7 @@ public class LoginController {
 	private ProfileService profileService;
 	
     @SuppressWarnings({ "unchecked", "rawtypes" })
-	@RequestMapping(value = "/account/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public ResponseEntity<?> login(@RequestBody Credential loginReq) {
     	    	if(loginReq.getEmail().isEmpty() || loginReq.getPassword().isEmpty()) {
 	    		return new ResponseEntity(new CustomErrorType("M1001", "Please check your email and password"), HttpStatus.NOT_FOUND);
