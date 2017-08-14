@@ -90,13 +90,20 @@ public class ClaimController {
     	    	
     	Claim claim = claimService.getClaimById(claimid);
     
-    	if (claim == null) {
-			return new ResponseEntity(new CustomErrorType("claim id #" + claimid 
-					+ " not found"), HttpStatus.NOT_FOUND);
-		}
-    	
-    	return new ResponseEntity<Claim>(claim, HttpStatus.OK);	
+    	if (validateClaimId(claim, claimid)) {
+    		return new ResponseEntity<Claim>(claim, HttpStatus.OK);
 	}
+	
+    	return new ResponseEntity(new CustomErrorType("M2002","The claim number #" + claimid 
+					+ " not found"), HttpStatus.NOT_FOUND);
+	}
+    
+    public boolean validateClaimId(Claim claim, String claimId) {
+    	if(claim == null) {
+    		return false;
+    	}
+    	return claim.getClaimId().equals(claimId);
+    }
 }
 
 

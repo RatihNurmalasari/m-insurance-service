@@ -6,7 +6,7 @@ public class CustomErrorType {
     private String errorMessage;
 
     public CustomErrorType(String errorMessage){
-		this.errorCode = "";
+    	this.errorCode = "M0000";
 	    this.errorMessage = errorMessage;
 	}
     

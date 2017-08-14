@@ -32,13 +32,20 @@ public class LoginController {
 	    	}
     	    	
 	    Credential credential = loginService.getCredentialByEmail(loginReq.getEmail());
-	    if(credential != null && loginReq.getPassword().equals(credential.getPassword())) {
+	    if(validateCredential(credential, loginReq)) {
 	    		Profile profile = profileService.getProfileByEmail(credential.getEmail());
 	    		profile.setSessionId(ClaimConstants.SESSION_ID);
     			return new ResponseEntity<>(profile, HttpStatus.OK);
 	    	}
 	    	return new ResponseEntity(new CustomErrorType("M1001", "Please check your email and password"), HttpStatus.NOT_FOUND);	
 	}
+    
+    public boolean validateCredential(Credential credential, Credential loginReq) {
+    		if(credential == null) {
+    			return false;
+    		}
+    		return (loginReq.getEmail().equals(credential.getEmail()) && loginReq.getPassword().equals(credential.getPassword()));
+    }
 }
 
 
