@@ -31,6 +31,7 @@ public class ClaimSpringbootApplication {
 
 			// Dummy data for credential
 			credentialRepository.save(new Credential("alexa.sawyer@gmail.com", "ABC123abc"));
+			credentialRepository.save(new Credential("alexa@gmail.com", "Welcome123"));
 			
 			// Dummy data for profile
 			profileRepository.save(new Profile("alexa.sawyer@gmail.com", "Alexa", "Sawyer", "08/01/1974", "302-2951 Ipsum. Road", "Lowell", "Massachusetts", "US", "49235", "(128) 858-2131"));
