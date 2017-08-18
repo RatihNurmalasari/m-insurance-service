@@ -7,4 +7,5 @@ import com.manulife.model.Credential;
 
 @Repository("credentialRepository")
 public interface CredentialRepository extends JpaRepository<Credential, String> {
+	Credential findByUsername(String email);
 }
