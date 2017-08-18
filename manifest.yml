@@ -1,9 +1,10 @@
 ---
 applications:
-- name: manulife-springboot-poc
+- name: manulife-service
   memory: 1G
   instances: 1
-  path: target/manulife-api-0.0.1-SNAPSHOT.jar
+  command: mvn clean package && cd target && java -jar manulife-api-0.0.1-SNAPSHOT.jar
+  #path: target/manulife-api-0.0.1-SNAPSHOT.jar
   domain: cfapps.io
-  host: service-spring
+  host: manulife-service
  
