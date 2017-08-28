@@ -27,7 +27,7 @@ public class LoginController {
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public ResponseEntity<?> login(@RequestBody Credential loginReq) {
-    	    	if(loginReq.getEmail().isEmpty() || loginReq.getPassword().isEmpty()) {
+    	    	if(loginReq.getEmail().isEmpty() || loginReq.getPass().isEmpty()) {
 	    		return new ResponseEntity(new CustomErrorType("M1001", "Please check your email and password"), HttpStatus.NOT_FOUND);
 	    	}
     	    	
@@ -44,7 +44,7 @@ public class LoginController {
     		if(credential == null) {
     			return false;
     		}
-    		return (loginReq.getEmail().equals(credential.getEmail()) && loginReq.getPassword().equals(credential.getPassword()));
+    		return (loginReq.getEmail().equals(credential.getEmail()) && loginReq.getPass().equals(credential.getPass()));
     }
 }
 

@@ -9,16 +9,16 @@ public class Credential {
 	@Id
 	//@GeneratedValue
 	private String email;
-	private String password;
+	private String pass;
 	
 	public Credential() {
 		this.email = "";
-		this.password = "";
+		this.pass = "";
 	}
 	
 	public Credential(String email, String password) {
 		this.email = email;
-		this.password = password;
+		this.pass = password;
 	}
 
 	public String getEmail() {
@@ -29,12 +29,12 @@ public class Credential {
 		this.email = email;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPass() {
+		return pass;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 		
 }
