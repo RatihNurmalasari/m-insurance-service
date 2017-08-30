@@ -29,12 +29,12 @@ public class Credential {
 		this.email = email;
 	}
 
-	public String getPass() {
+	public String getPassword() {
 		return pass;
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPassword(String password) {
+		this.pass = password;
 	}
 		
 }
