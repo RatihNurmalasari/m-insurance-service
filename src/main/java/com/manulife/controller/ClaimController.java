@@ -26,7 +26,7 @@ public class ClaimController {
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "manulife/claimall", method = RequestMethod.GET)
-    public ResponseEntity<List<Claim>> getClaims(@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "AuthID", required = true)String authID , @RequestHeader(value = "sessionID", required = true)String sessionID) {
+    public ResponseEntity<List<Claim>> getClaims(@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "tokenID", required = true)String tokenID , @RequestHeader(value = "sessionID", required = true)String sessionID) {
     	
 		if (sessionID.isEmpty()) {
 			return new ResponseEntity(new CustomErrorType("Invalid Session ID # " + sessionID 
@@ -38,11 +38,11 @@ public class ClaimController {
 					), HttpStatus.NOT_FOUND);
 		}
 		if (clientID.isEmpty()) {
-			return new ResponseEntity(new CustomErrorType("Client ID# " + clientID 
+			return new ResponseEntity(new CustomErrorType("Clinet ID# " + clientID 
 					+ " not found"), HttpStatus.NOT_FOUND);
 		}
-    	if (authID.isEmpty()) {
-    		return new ResponseEntity(new CustomErrorType("TokenID ID# " + authID 
+    	if (tokenID.isEmpty()) {
+    		return new ResponseEntity(new CustomErrorType("TokenID ID# " + tokenID 
 				+ " not found"), HttpStatus.NOT_FOUND);
     	}
     	List<Claim> claims = claimService.getAllClaim();
@@ -51,7 +51,7 @@ public class ClaimController {
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "/manulife/claim/{claimid}", method = RequestMethod.GET)
-    public ResponseEntity<?> getClaim(@PathVariable("claimid") String claimid,@RequestHeader(value = "AuthID", required = true) String authID,@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "sessionID", required = true)String sessionID ) {
+    public ResponseEntity<?> getClaim(@PathVariable("claimid") String claimid,@RequestHeader(value = "tokenID", required = true) String tokenID,@RequestHeader(value = "clientID", required = true) String clientID,@RequestHeader(value = "sessionID", required = true)String sessionID ) {
     	
     	if (sessionID.isEmpty()) {
 			return new ResponseEntity(new CustomErrorType("Invalid Session ID # " + sessionID 
@@ -64,22 +64,22 @@ public class ClaimController {
 		}
     	
     	if (clientID.isEmpty()) {
-			return new ResponseEntity<CustomErrorType>(new CustomErrorType("Client ID# " + clientID 
+			return new ResponseEntity<CustomErrorType>(new CustomErrorType("Clinet ID# " + clientID 
 					+ " not found"), HttpStatus.NOT_FOUND);
 		}
     	
     	if (!clientID.equals(ClaimConstants.CLIENT_ID)) {
-			return new ResponseEntity<CustomErrorType>(new CustomErrorType("Client ID# " + clientID 
+			return new ResponseEntity<CustomErrorType>(new CustomErrorType("Clinet ID# " + clientID 
 					+ " is wrong"), HttpStatus.NOT_FOUND);
 		}
     	    	
-    	if (authID.isEmpty()) {
-		return new ResponseEntity(new CustomErrorType("TokenID ID# " + authID 
+    	if (tokenID.isEmpty()) {
+		return new ResponseEntity(new CustomErrorType("TokenID ID# " + tokenID 
 				+ " not found"), HttpStatus.NOT_FOUND);
     	}
     	
-    	if (!authID.equals(ClaimConstants.AUTH_ID)) {
-			return new ResponseEntity<CustomErrorType>(new CustomErrorType("Client ID# " + authID 
+    	if (!tokenID.equals(ClaimConstants.AUTH_ID)) {
+			return new ResponseEntity<CustomErrorType>(new CustomErrorType("Clinet ID# " + tokenID 
 					+ " is wrong"), HttpStatus.NOT_FOUND);
 		}
     	

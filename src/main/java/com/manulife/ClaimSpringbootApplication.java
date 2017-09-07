@@ -1,19 +1,12 @@
 package com.manulife;
 
-import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
- 
-import com.manulife.config.CustomUserDetails;
+
 import com.manulife.model.Claim;
 import com.manulife.model.Credential;
 import com.manulife.model.Hospital;
@@ -21,17 +14,12 @@ import com.manulife.model.Profile;
 import com.manulife.repository.ClaimRepository;
 import com.manulife.repository.CredentialRepository;
 import com.manulife.repository.ProfileRepository;
-import com.manulife.security.entities.Role;
-import com.manulife.service.LoginService;
-
-
 
 @SpringBootApplication
 public class ClaimSpringbootApplication {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ClaimSpringbootApplication.class);
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClaimSpringbootApplication.class, args);
@@ -55,29 +43,4 @@ public class ClaimSpringbootApplication {
 
 		};
 	}
-	
-	/**
-	 * Password grants are switched on by injecting an AuthenticationManager.
-	 * Here, we setup the builder so that the userDetailsService is the one we coded.
-	 * @param builder
-	 * @param repository
-	 * @throws Exception
-     */
-	@Autowired
-	public void authenticationManager(AuthenticationManagerBuilder builder, CredentialRepository repository, LoginService service) throws Exception {
-		//Setup a default user if db memory is empty
-		if (repository.count()==0)
-			service.save(new Credential("user", "user", Arrays.asList(new Role("USER"), new Role("ACTUATOR"))));
-		builder.userDetailsService(userDetailsService(repository)).passwordEncoder(passwordEncoder);
-	}
-
-	/**
-	 * We return an istance of our CustomUserDetails.
-	 * @param repository
-	 * @return
-     */
-	private UserDetailsService userDetailsService(final CredentialRepository repository) {
-		return username -> new CustomUserDetails(repository.findByUsername(username));
-	}
-
 }

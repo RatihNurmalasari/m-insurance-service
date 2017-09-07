@@ -1,9 +1,0 @@
-spring:
-  application:
-    username: user
-security:
-    user:
-      password: user
-    oauth2:
-      resource:
-        filter-order: 3
