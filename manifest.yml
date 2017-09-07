@@ -1,8 +1,7 @@
 ---
 applications:
-- name: manulife
+- name: manulife-service
+  memory: 1G
   instances: 1
-  random-route: true
-  command: npm start
-  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
-  port: 8081
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  path: target/manulife-api-0.0.1-SNAPSHOT.jar
