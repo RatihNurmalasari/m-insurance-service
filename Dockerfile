@@ -7,6 +7,6 @@ ADD ./pom.xml /springboot-service/pom.xml
 WORKDIR /springboot-service
 RUN mvn clean package
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD java -jar target/manulife-api-0.0.1-SNAPSHOT.jar
