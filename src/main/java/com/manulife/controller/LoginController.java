@@ -16,7 +16,7 @@ import com.manulife.service.LoginService;
 import com.manulife.service.ProfileService;
 import com.manulife.util.CustomErrorType;
 
-@CrossOrigin("http://manulife-claim-dockermgmt.centralus.cloudapp.azure.com:5050")
+@CrossOrigin("http://172.17.10.213:5050")
 @RestController
 public class LoginController {
 	@Autowired
